@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FinPay.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -30,6 +32,10 @@ namespace FinPayService
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo{ Title = "Survey API", Version = "v1" });
                 
             });
+            string constr =
+                "Server=tcp:fintech.database.windows.net,1433;Initial Catalog=FinPay;Persist Security Info=False;User ID=ujjawal2014@gmail.com@fintech;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            services.AddDbContext<FinPay.DataAccess.FinPay>(o => o.UseSqlServer(constr));
+            
 
         }
 
@@ -42,6 +48,7 @@ namespace FinPayService
             }
 
             app.UseMvc();
+            
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
