@@ -6,5 +6,7 @@ namespace FinPay.Models
 {
     class Login
     {
+
+
     }
 }
