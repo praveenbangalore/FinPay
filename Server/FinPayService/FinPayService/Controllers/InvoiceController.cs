@@ -17,8 +17,8 @@ namespace FinPayService.Controllers
         public ActionResult<IEnumerable<Invoice>> Get()
         {
             return new Invoice[] {  
-            new Invoice(){ },
-            new Invoice(){ },
+            new Invoice(){ InvoiceID = 1, InvoiceNumber = "Starge 1" },
+            new Invoice(){ InvoiceID = 2, InvoiceNumber = "Starge 3" },
             };
         }
 
