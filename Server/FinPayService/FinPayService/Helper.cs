@@ -20,17 +20,8 @@ namespace FinPayService
         //below methods should have been in BL
         public static User Authenticate(string username, string password)
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                return null;
-
-            var user = _context.Users.SingleOrDefault(x => x.Username == username);
-            if (user == null)
-                return null;
-
-            if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
-                return null;
-
-            return user;
+            //Need to get user details from DB and verify the passwrod agaist passwordsalt
+            return new User { Username ="testuser", FirstName="test" };
         }
 
         private static bool VerifyPasswordHash(string password, byte[] storedHash, byte[] storedSalt)

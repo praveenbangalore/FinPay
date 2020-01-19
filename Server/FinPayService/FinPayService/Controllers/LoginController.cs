@@ -13,11 +13,8 @@ namespace FinPayService.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
-    [ApiController]
     public class LoginController : ControllerBase
     {
-<<<<<<< HEAD
-        private global::FinPay.DataAccess.FinPay _context;
         private readonly AppSettings _appSettings;
         public LoginController(IOptions<AppSettings> appSettings)
         {
@@ -26,9 +23,9 @@ namespace FinPayService.Controllers
 
         [AllowAnonymous]
         [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody]User user)
+        public IActionResult Authenticate([FromBody]User user, string password)
         {
-            var userIdentity =  Helper.Authenticate(user.Username, user.Password);
+            var userIdentity =  Helper.Authenticate(user.Username, password);
 
             if (user == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
@@ -62,24 +59,20 @@ namespace FinPayService.Controllers
         [HttpPost("register")]
         public IActionResult Register([FromBody]User user, string password)
         {
-            
+
             try
             {
-                byte[] passwordHash, passwordSalt;
-                Helper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
+                //byte[] passwordHash, passwordSalt;
+                //Helper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
-                user.PasswordHash = passwordHash;
-                user.PasswordSalt = passwordSalt;
+                //user.PasswordHash = passwordHash;
+                //user.PasswordSalt = passwordSalt;
 
-                _context.SaveChanges();
-                var logindata = _context.Login.FirstOrDefault(l => l.UserID == UserID && l.Password == pwd);
-                logindata.UserID = "aa";
-                logindata.Password = "aa";
-                _context.user.Update(logindata);
-                _context.Login.Add(logindata);
-                _context.SaveChanges();
+                //Register to dB
 
                 return Ok();
+
+                
 
             }
             catch (Exception ex)
@@ -87,22 +80,7 @@ namespace FinPayService.Controllers
                 // return error message if there was an exception
                 return BadRequest(new { message = ex.Message });
             }
-=======
-        private global::FinPay.DataAccess.FinPayDbContext  _context;
-        public LoginController(global::FinPay.DataAccess.FinPayDbContext  finPay)
-        {
-            _context = finPay;
         }
 
-        // GET api/values/5
-        [HttpPost("{UserID}/{pwd}")]
-        public ActionResult<string> Get(string UserID, string pwd)
-        {
-            var logindata = _context.Login.Select(l => l.UserID == UserID && l.Password == pwd);
-            return logindata != null ? "CCCLOCKRLLLL" : (ActionResult<string>)string.Empty;
-
-            //return new Login() { Email = email, Pwd = pwd, PartnersID = 1, PartnersName = "Test user" };
->>>>>>> 87e99cd6c3351e4eea6fd46271d0828bfaf0be68
-        }
     }
 }
