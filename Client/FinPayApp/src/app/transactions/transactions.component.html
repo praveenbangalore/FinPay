@@ -1,0 +1,21 @@
+
+<p *ngIf="!transactions"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="transactions">
+  <thead>
+    <tr>
+      <th>From Account</th>
+      <th>To Account</th>
+      <th>Transaction ID</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tr of transactions">
+      <td>{{ tr.fromAccount }}</td>
+      <td>{{ tr.toAccount }}</td>
+      <td>{{ tr.transactionId }}</td>
+      <td>{{ tr.amount }}</td>
+    </tr>
+  </tbody>
+</table>
