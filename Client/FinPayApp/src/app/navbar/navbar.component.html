@@ -1,0 +1,14 @@
+    <div class="topnav">
+        <div class="maintitle">
+            <span class="titilecolor">Fin Tech</span>
+        </div>
+        <div id="navbarid">
+        
+        <a href="#"  [routerLink]="['login']"  *ngIf = "!isAuthorized" routerLinkActive="active" style=" float: right !important;">Login</a>
+        <a  href="#" [routerLink]="['dashboard']" *ngIf = "isAuthorized"  routerLinkActive="active"><i title="Dashboard"></i>Dashboard</a>
+        <a  href="#" [routerLink]="['invoice']" *ngIf = "isAuthorized"  routerLinkActive="active"><i title="Invoice"></i>Invoice</a>
+        <a  href="#" [routerLink]="['transactions']" *ngIf = "isAuthorized"  routerLinkActive="active"><i title="Transactions"></i>Transactions</a>
+        
+        <a (click) ="OnLogOut()" *ngIf = "isAuthorized" style=" float: right !important;margin-right: 30px !important"><i title="Logout">Logout</i></a>
+        </div>   
+    </div>
