@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <UserSecretsId>5e29371c-4f35-440b-b743-b8b72a104905</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,16 +10,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Properties\PublishProfiles\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\FinPay.DataAccess\FinPay.DataAccess.csproj" />
-    <ProjectReference Include="..\FinPay.Models\FinPay.Models.csproj" />
   </ItemGroup>
 
 </Project>

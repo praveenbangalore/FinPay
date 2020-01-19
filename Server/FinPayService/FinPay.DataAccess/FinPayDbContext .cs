@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using FinPay.DataAccess.Models;
-using FinPay.Engine;
+using FinPay.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinPay.DataAccess
 {
-   public class FinPay:DbContext
+   public class FinPayDbContext :DbContext
    {
-       public FinPay(DbContextOptions<FinPay> options): base(options) 
+       public FinPayDbContext (DbContextOptions<FinPayDbContext > options): base(options) 
        {
            
        }
         //public DbSet<AccountInfo> AccountInfo { get; set; }
         public DbSet<Invoice> Invoice { get; set; }
+        public DbSet<Login> Login { get; set; }
 
 
     }
