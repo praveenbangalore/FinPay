@@ -26,6 +26,7 @@ export class InvoiceComponent implements OnInit {
       partner :['',Validators.required],
       contact :['',Validators.required],
       email:['',Validators.email],
+      id:['',Validators.email]
     });
   }
   

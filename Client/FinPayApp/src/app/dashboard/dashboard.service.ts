@@ -12,6 +12,6 @@ export class DashboardService extends BaseHttpService{
 }
 
 stats():Observable<any>    {
-    return this.get('get',this.COMMON_JSON_HEADER_REQUEST);
+    return this.get('stats',this.COMMON_JSON_HEADER_REQUEST);
 }
 }
