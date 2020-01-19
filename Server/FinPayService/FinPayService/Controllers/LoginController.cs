@@ -16,6 +16,7 @@ namespace FinPayService.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+<<<<<<< HEAD
         private global::FinPay.DataAccess.FinPay _context;
         private readonly AppSettings _appSettings;
         public LoginController(IOptions<AppSettings> appSettings)
@@ -86,6 +87,22 @@ namespace FinPayService.Controllers
                 // return error message if there was an exception
                 return BadRequest(new { message = ex.Message });
             }
+=======
+        private global::FinPay.DataAccess.FinPayDbContext  _context;
+        public LoginController(global::FinPay.DataAccess.FinPayDbContext  finPay)
+        {
+            _context = finPay;
+        }
+
+        // GET api/values/5
+        [HttpPost("{UserID}/{pwd}")]
+        public ActionResult<string> Get(string UserID, string pwd)
+        {
+            var logindata = _context.Login.Select(l => l.UserID == UserID && l.Password == pwd);
+            return logindata != null ? "CCCLOCKRLLLL" : (ActionResult<string>)string.Empty;
+
+            //return new Login() { Email = email, Pwd = pwd, PartnersID = 1, PartnersName = "Test user" };
+>>>>>>> 87e99cd6c3351e4eea6fd46271d0828bfaf0be68
         }
     }
 }

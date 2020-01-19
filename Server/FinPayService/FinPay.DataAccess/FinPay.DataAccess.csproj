@@ -9,14 +9,26 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <ProjectReference Include="..\FinPay.Engine\FinPay.Engine.csproj" />
     <ProjectReference Include="..\FinPay.Models\FinPay.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+=======
+>>>>>>> 87e99cd6c3351e4eea6fd46271d0828bfaf0be68
     <Reference Include="Microsoft.EntityFrameworkCore">
       <HintPath>..\..\..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FinPay.Contract\FinPay.Contract.csproj" />
+    <ProjectReference Include="..\FinPay.Models\FinPay.Models.csproj" />
   </ItemGroup>
 
 </Project>

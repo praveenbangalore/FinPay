@@ -2,26 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FinPay.DataAccess.Models;
+using FinPay.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinPayService.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class InvoiceController : ControllerBase
     {
-        private global::FinPay.DataAccess.FinPay _context;
-        public InvoiceController(global::FinPay.DataAccess.FinPay finPay)
+        private global::FinPay.DataAccess.FinPayDbContext  _context;
+        public InvoiceController(global::FinPay.DataAccess.FinPayDbContext  finPay)
         {
             _context = finPay;
         }
         // GET api/values
         [HttpGet]
-        public ActionResult<int> Get()
+        public ActionResult<Invoice> Get()
         {
-            return _context.Invoice.Select(i=>i.InvoiceId).FirstOrDefault();
+            return _context.Invoice.FirstOrDefault();
 
         }
 
