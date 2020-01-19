@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FinPay.Engine\FinPay.Engine.csproj" />
+    <ProjectReference Include="..\FinPay.Models\FinPay.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>
