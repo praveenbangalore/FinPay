@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using FinPay = FinPay.DataAccess.FinPay;
+using FinPay = FinPay.DataAccess.FinPayDbContext ;
 
 namespace FinPayService.Controllers
 {
@@ -11,9 +11,9 @@ namespace FinPayService.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private global::FinPay.DataAccess.FinPay _context;
+        private global::FinPay.DataAccess.FinPayDbContext  _context;
 
-        public HomeController(global::FinPay.DataAccess.FinPay finPay)
+        public HomeController(global::FinPay.DataAccess.FinPayDbContext  finPay)
         {
             _context= finPay;
         }

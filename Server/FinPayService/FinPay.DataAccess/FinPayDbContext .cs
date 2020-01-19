@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinPay.DataAccess
 {
-   public class FinPay:DbContext
+   public class FinPayDbContext :DbContext
    {
-       public FinPay(DbContextOptions<FinPay> options): base(options) 
+       public FinPayDbContext (DbContextOptions<FinPayDbContext > options): base(options) 
        {
            
        }

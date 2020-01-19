@@ -14,8 +14,8 @@ namespace FinPayService.Controllers
     [ApiController]
     public class InvoiceController : ControllerBase
     {
-        private global::FinPay.DataAccess.FinPay _context;
-        public InvoiceController(global::FinPay.DataAccess.FinPay finPay)
+        private global::FinPay.DataAccess.FinPayDbContext  _context;
+        public InvoiceController(global::FinPay.DataAccess.FinPayDbContext  finPay)
         {
             _context = finPay;
         }

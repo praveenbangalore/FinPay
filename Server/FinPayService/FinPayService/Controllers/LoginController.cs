@@ -12,8 +12,8 @@ namespace FinPayService.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private global::FinPay.DataAccess.FinPay _context;
-        public LoginController(global::FinPay.DataAccess.FinPay finPay)
+        private global::FinPay.DataAccess.FinPayDbContext  _context;
+        public LoginController(global::FinPay.DataAccess.FinPayDbContext  finPay)
         {
             _context = finPay;
         }
