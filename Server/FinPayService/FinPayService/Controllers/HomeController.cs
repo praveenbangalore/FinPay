@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FinPay.Engine;
 using Microsoft.AspNetCore.Mvc;
 using FinPay = FinPay.DataAccess.FinPay;
 

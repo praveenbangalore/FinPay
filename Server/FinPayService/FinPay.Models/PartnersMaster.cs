@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FinPay.DataAccess.Models
+namespace FinPay.Models
 {
     public partial class PartnersMaster
     {
