@@ -21,9 +21,9 @@ namespace FinPayService.Controllers
         }
         // GET api/values
         [HttpGet]
-        public ActionResult<int> Get()
+        public ActionResult<Invoice> Get()
         {
-            return _context.Invoice.Select(i=>i.InvoiceId).FirstOrDefault();
+            return _context.Invoice.FirstOrDefault();
 
         }
 
