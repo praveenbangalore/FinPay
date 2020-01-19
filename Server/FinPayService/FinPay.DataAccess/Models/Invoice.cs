@@ -7,6 +7,5 @@ namespace FinPay.DataAccess.Models
     {
         public int InvoiceId { get; set; }
         public string InvoiceNumber { get; set; }
-        public string InvoiceDesc { get; set; }
     }
 }

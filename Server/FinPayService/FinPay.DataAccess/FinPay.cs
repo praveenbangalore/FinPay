@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using FinPay.DataAccess.Models;
 using FinPay.Engine;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,8 +13,8 @@ namespace FinPay.DataAccess
        {
            
        }
-       //public DbSet<AccountInfo> AccountInfo { get; set; }
-       //public DbSet<AccountInfo> AccountInfo { get; set; }
+        //public DbSet<AccountInfo> AccountInfo { get; set; }
+        public DbSet<Invoice> Invoice { get; set; }
 
 
     }

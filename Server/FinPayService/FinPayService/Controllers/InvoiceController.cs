@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FinPay.Models;
+using FinPay.DataAccess.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,14 +12,17 @@ namespace FinPayService.Controllers
     [ApiController]
     public class InvoiceController : ControllerBase
     {
+        private global::FinPay.DataAccess.FinPay _context;
+        public InvoiceController(global::FinPay.DataAccess.FinPay finPay)
+        {
+            _context = finPay;
+        }
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<Invoice>> Get()
+        public ActionResult<int> Get()
         {
-            return new Invoice[] {  
-            new Invoice(){ InvoiceID = 1, InvoiceNumber = "Starge 1" },
-            new Invoice(){ InvoiceID = 2, InvoiceNumber = "Starge 3" },
-            };
+            return _context.Invoice.Select(i=>i.InvoiceId).FirstOrDefault();
+
         }
 
         // GET api/values/5

@@ -33,7 +33,7 @@ namespace FinPayService
                 
             });
             string constr =
-                "Server=tcp:fintech.database.windows.net,1433;Initial Catalog=FinPay;Persist Security Info=False;User ID=ujjawal2014@gmail.com@fintech;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                "Server=tcp:fintech.database.windows.net,1433;Initial Catalog=FinPay;Persist Security Info=False;User ID=ujjawal2014@gmail.com@fintech;Password=Sonu@512;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             services.AddDbContext<FinPay.DataAccess.FinPay>(o => o.UseSqlServer(constr));
             
 

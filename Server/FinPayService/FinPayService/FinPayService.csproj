@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FinPay.DataAccess\FinPay.DataAccess.csproj" />
+    <ProjectReference Include="..\FinPay.Models\FinPay.Models.csproj" />
   </ItemGroup>
 
 </Project>
