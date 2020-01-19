@@ -15,6 +15,7 @@ namespace FinPay.DataAccess
        }
         //public DbSet<AccountInfo> AccountInfo { get; set; }
         public DbSet<Invoice> Invoice { get; set; }
+        public DbSet<Login> Login { get; set; }
 
 
     }
